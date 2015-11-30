@@ -1,0 +1,8 @@
+<scene>
+  <spawn position="19 2 20" />
+  <skybox style="color: linear-gradient(#3a3a3a, #000)" />
+
+  <box position="0 0 0" style="color: #3a3a3a;" scale="1000 1 1000" />
+
+  <model src="/lightmapped.obj?3" position="0 0 0" style="color: #777; light-map: url(/lightmapped.png?3); collision: mesh; " />
+</scene>

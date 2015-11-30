@@ -1,0 +1,198 @@
+
+<scene>
+	<spawn position="0 100 0" />
+	<skybox style="color: linear-gradient(#fff, #acf)" />
+
+	<box id="next-button" style="color: #f00" position="2 0.9 0.4" scale="0.4 0.4 0.5" />
+	<box style="color: #fff" position="2 0.6 0.4" scale="0.6 1.2 0.2" />
+
+	<box id="prev-button" style="color: #f00" position="-2 0.9 0.4" scale="0.4 0.4 0.5" />
+	<box style="color: #fff" position="-2 0.6 0.4" scale="0.6 1.2 0.2" />
+
+	<script>
+			function reposition (start) {
+				var elements = document.getElementsByTagName('billboard')
+
+				var p = new Vector(0 - start * 4, 1.5, 0)
+				var r = new Euler(0, 0, 0)
+
+				elements.forEach(function (el) {
+    			el.position.copy(p)
+    			el.rotation.copy(r)
+
+					// console.log(el)
+
+				  var m = new Vector(4, 0, 0).applyEuler(r)
+
+			    p.add(m)
+
+			    if (p.x > 0) {
+    				r.y -= 0.3
+    			}
+				})
+			}
+
+			var index = 0
+
+			document.getElementById('prev-button').addEventListener('click', function (e) {
+				index -= 1
+				reposition(index)
+			})
+
+			document.getElementById('next-button').addEventListener('click', function (e) {
+					index += 1
+					reposition(index)
+			})
+
+			reposition(index)
+
+			var y = 0
+
+			setInterval(function () {
+				document.getElementById('teapot').rotation.z = y
+				y += 0.05
+			}, 1000 / 10)
+	</script>
+
+	<model src="/models/king.obj" style="color: #fa0" scale="1 1 1" position="-10 0 3" />
+	<model id="teapot" src="/models/teapot.obj" style="color: #f0a" scale="5 5 5" position="0 4 30" rotation="0 0.7 0" />
+
+	<billboard position="0 1.5 0" scale="3 3 0.2" rotation="0 0 0 XYZ"><![CDATA[
+		<b style="font-size: 100px; color: blue;">Sup yo</b>
+	]]></billboard>
+
+	<billboard position="4 1.5 0" scale="3 3 0.2" rotation="0 -0.1 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.002.png" />
+	]]></billboard>
+
+	<billboard position="7.980016661112103 1.5 0.3993336665873126" scale="3 3 0.2" rotation="0 -0.2 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.003.png" />
+	]]></billboard>
+
+	<billboard position="11.900282972477068 1.5 1.1940109897675575" scale="3 3 0.2" rotation="0 -0.30000000000000004 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.004.png" />
+	]]></billboard>
+
+	<billboard position="15.721628928979491 1.5 2.3760918164129157" scale="3 3 0.2" rotation="0 -0.4 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.005.png" />
+	]]></billboard>
+
+	<billboard position="19.405872904991032 1.5 3.9337651856475175" scale="3 3 0.2" rotation="0 -0.5 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.006.png" />
+	]]></billboard>
+
+	<billboard position="22.916203152552523 1.5 5.85146734006433" scale="3 3 0.2" rotation="0 -0.6 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.007.png" />
+	]]></billboard>
+
+	<billboard position="26.217545612191238 1.5 8.110037233644471" scale="3 3 0.2" rotation="0 -0.7 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.008.png" />
+	]]></billboard>
+
+	<billboard position="29.27691436132919 1.5 10.686907982595235" scale="3 3 0.2" rotation="0 -0.7999999999999999 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.009.png" />
+	]]></billboard>
+
+	<billboard position="32.06374119871785 1.5 13.556332346193326" scale="3 3 0.2" rotation="0 -0.8999999999999999 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.010.png" />
+	]]></billboard>
+
+	<billboard position="34.55018107180051 1.5 16.68963998470326" scale="3 3 0.2" rotation="0 -0.9999999999999999 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.011.png" />
+	]]></billboard>
+
+	<billboard position="36.71139029527307 1.5 20.055523923934846" scale="3 3 0.2" rotation="0 -1.0999999999999999 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.012.png" />
+	]]></billboard>
+
+	<billboard position="38.52577478097538 1.5 23.620353364180588" scale="3 3 0.2" rotation="0 -1.2 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.013.png" />
+	]]></billboard>
+
+	<billboard position="39.97520579888208 1.5 27.348509708049495" scale="3 3 0.2" rotation="0 -1.3 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.014.png" />
+	]]></billboard>
+
+	<billboard position="41.04520111338043 1.5 31.202742449718265" scale="3 3 0.2" rotation="0 -1.4000000000000001 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.015.png" />
+	]]></billboard>
+
+	<billboard position="41.72506968498139 1.5 35.144541369672105" scale="3 3 0.2" rotation="0 -1.5000000000000002 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.016.png" />
+	]]></billboard>
+
+	<billboard position="42.0080184916522 1.5 39.134521316088325" scale="3 3 0.2" rotation="0 -1.6000000000000003 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.017.png" />
+	]]></billboard>
+
+	<billboard position="41.89122040244705 1.5 43.13281572825434" scale="3 3 0.2" rotation="0 -1.7000000000000004 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.018.png" />
+	]]></billboard>
+
+	<billboard position="41.37584242526495 1.5 47.099474970064215" scale="3 3 0.2" rotation="0 -1.8000000000000005 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.019.png" />
+	]]></billboard>
+
+	<billboard position="40.4670340464926 1.5 50.994865493576995" scale="3 3 0.2" rotation="0 -1.9000000000000006 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.020.png" />
+	]]></billboard>
+
+	<billboard position="39.17387577903858 1.5 54.78006584432665" scale="3 3 0.2" rotation="0 -2.0000000000000004 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.021.png" />
+	]]></billboard>
+
+	<billboard position="37.50928843285001 1.5 58.417255551629374" scale="3 3 0.2" rotation="0 -2.1000000000000005 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.022.png" />
+	]]></billboard>
+
+	<billboard position="35.48990401445058 1.5 61.87009301822487" scale="3 3 0.2" rotation="0 -2.2000000000000006 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.023.png" />
+	]]></billboard>
+
+	<billboard position="33.1358995454292 1.5 65.10407863350324" scale="3 3 0.2" rotation="0 -2.3000000000000007 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.024.png" />
+	]]></billboard>
+
+	<billboard position="30.470795460309898 1.5 68.08689948221011" scale="3 3 0.2" rotation="0 -2.400000000000001 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.025.png" />
+	]]></billboard>
+
+	<billboard position="27.521220598144915 1.5 70.78875220441472" scale="3 3 0.2" rotation="0 -2.500000000000001 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.026.png" />
+	]]></billboard>
+
+	<billboard position="24.31664613595718 1.5 73.18264078083054" scale="3 3 0.2" rotation="0 -2.600000000000001 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.027.png" />
+	]]></billboard>
+
+	<billboard position="20.88909112248139 1.5 75.2446462681164" scale="3 3 0.2" rotation="0 -2.700000000000001 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.028.png" />
+	]]></billboard>
+
+	<billboard position="17.272802554413143 1.5 76.95416578905171" scale="3 3 0.2" rotation="0 -2.800000000000001 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.029.png" />
+	]]></billboard>
+
+	<billboard position="13.503913191738508 1.5 78.29411838967533" scale="3 3 0.2" rotation="0 -2.9000000000000012 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.030.png" />
+	]]></billboard>
+
+	<billboard position="9.620080531140145 1.5 79.25111570653125" scale="3 3 0.2" rotation="0 -3.0000000000000013 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.031.png" />
+	]]></billboard>
+
+	<billboard position="5.660110544738362 1.5 79.81559573877071" scale="3 3 0.2" rotation="0 -3.1000000000000014 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.032.png" />
+	]]></billboard>
+
+	<billboard position="1.6635699436452445 1.5 79.98191838850387" scale="3 3 0.2" rotation="0 -3.2000000000000015 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.033.png" />
+	]]></billboard>
+
+	<billboard position="-2.329609159533767 1.5 79.74842181479355" scale="3 3 0.2" rotation="0 -3.3000000000000016 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.034.png" />
+	]]></billboard>
+
+	<billboard position="-6.279528239169226 1.5 79.11743903822054" scale="3 3 0.2" rotation="0 -3.4000000000000017 0 XYZ"><![CDATA[
+		<img style="width: 480px; margin-top: 40px" src="./slides/slides.035.png" />
+	]]></billboard></scene>
